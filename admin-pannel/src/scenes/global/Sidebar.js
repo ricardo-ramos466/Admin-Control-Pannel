@@ -66,13 +66,13 @@ export const Sidebar = () =>{
                     <Menu iconShape="square">
                         <MenuItem
                         onClick={() => setIsCollapsed(!isCollapsed)}
-                        icon={isCollapsed ? <MapOutLinedIcon /> : undefined}
+                        icon={isCollapsed ? <MenuOutLinedIcon /> : undefined}
                         style={{
                             margin: "10px 0 20px 0",
                             color: colors.gray[100],
                         }}
                         >
-                            {isCollapsed && (
+                            {!isCollapsed && (
                                 <Box
                                 display="flex"
                                 justifyContent="space-between"
@@ -80,7 +80,7 @@ export const Sidebar = () =>{
                                 ml="15px"
                                 >
                                     <Typography variant="h3" color={colors.gray[100]}>
-                                        ADMINS
+                                        ADMINIS
                                     </Typography>
                                     <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                                         <MenuOutLinedIcon />
@@ -178,6 +178,8 @@ export const Sidebar = () =>{
                             title="FAQ Page"
                             to="/faq"
                             icon={<HelpOutlineOutlinedIcon />}
+                            selected={selected}
+                            setSelected={setSelected}
                             />
                             <Typography
                             variant="h6"
